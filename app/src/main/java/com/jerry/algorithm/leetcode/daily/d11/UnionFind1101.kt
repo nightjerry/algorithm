@@ -12,18 +12,8 @@ package com.jerry.algorithm.leetcode.daily.d11
 fun longestConsecutive(nums: IntArray): Int {
     val numSet = nums.toSet()
     var longest = 0
-//    numSet.forEach { num ->
-//        if (!numSet.contains(num -1)) {
-//            var current = num
-//            var streak = 1
-//            while (numSet.contains(current + 1)) {
-//                current += 1
-//                streak += 1
-//            }
-//            longest = maxOf(longest, streak)
-//        }
-//    }
     numSet.filterNot {
+        // 过滤掉数组中前驱数 it - 1
         numSet.contains(it - 1)
     }.forEach {
         var current = it
