@@ -168,11 +168,3 @@ fun removeElement(nums: IntArray, `val`: Int): Int {
     }
     return target
 }
-
-/**
- * 31. 下一个排列
- * https://leetcode.cn/problems/next-permutation/
- */
-fun nextPermutation(nums: IntArray): Unit {
-
-}

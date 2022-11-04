@@ -26,3 +26,20 @@ fun lengthOfLongestSubstring(s: String): Int {
     }
     return target
 }
+
+fun lengthOfLongestSubstring1(s: String): Int {
+    if (s.isEmpty()) {
+        return 0
+    }
+    val map = mutableMapOf<Char, Int>()
+    var max = 0
+    var left = 0
+    s.forEachIndexed { index, c ->
+        if (map.containsKey(c)) {
+            left = maxOf(left, map[c]!!+1)
+        }
+        map[c] = index
+        max = maxOf(max, index - left + 1)
+    }
+    return max
+}
