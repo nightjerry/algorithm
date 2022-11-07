@@ -28,3 +28,10 @@ fun show(a: IntArray) {
     }
     println()
 }
+
+fun <T> showArray(a: Array<T>) {
+    a.forEach {
+        print(it.toString().plus("-"))
+    }
+    println()
+}
