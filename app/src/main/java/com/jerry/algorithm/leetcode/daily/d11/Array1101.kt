@@ -8,8 +8,20 @@ import com.jerry.algorithm.show
  */
 
 fun main() {
-//    twoSum(intArrayOf(2,7,11,15), 9)
-    findMedianSortedArrays(intArrayOf(1,3), intArrayOf(2))
+    val nums = listOf(1, 2, 3, 4, 5)
+
+    run breaking@ {
+        nums.forEach {
+            if (it == 3) return@breaking
+            println(it)
+        }
+    }
+    println("------")
+    nums.forEach {
+        if (it == 3)
+            return@forEach
+        println(it)
+    }
 }
 
 /**
