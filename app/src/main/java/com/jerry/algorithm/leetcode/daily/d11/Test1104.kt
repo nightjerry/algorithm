@@ -10,6 +10,7 @@ import com.jerry.algorithm.show
 fun main() {
     val nums = intArrayOf(4,5,6,1,2,3,7,8)
     quickSort(nums, 0, nums.lastIndex)
+//    bubbleSort(nums)
     show(nums)
 }
 
@@ -18,6 +19,7 @@ private fun quickSort(array: IntArray, start: Int, end: Int) {
         return
     }
     val pivot = partition(array, start, end)
+    println("pivot = $pivot")
     quickSort(array, start, pivot - 1)
     quickSort(array, pivot + 1, end)
 }
@@ -33,8 +35,8 @@ private fun partition1(array: IntArray, start: Int, end: Int): Int {
 private fun partition(array: IntArray, start: Int, end: Int): Int {
     val pivot = array[start]
     var left = start
-    var right = end + 1
-    while (left <= right) {
+    var right = end
+    while (left != right) {
         while (left < right && array[right]> pivot) {
             right--
         }
@@ -47,6 +49,7 @@ private fun partition(array: IntArray, start: Int, end: Int): Int {
             array[right] = temp
         }
     }
+    println("left = $left, right = $right")
     array[start] = array[left]
     array[left] = pivot
 
